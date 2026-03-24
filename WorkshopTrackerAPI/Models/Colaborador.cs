@@ -5,6 +5,6 @@ namespace SeuProjeto.Models
         public int Id { get; set; }
         public string Nome { get; set; }
 
-        public List<WorkshopColaborador> WorkshopColaboradores { get; set; } = new();
+         public ICollection<WorkshopColaborador> WorkshopColaboradores { get; set; }
     }
 }

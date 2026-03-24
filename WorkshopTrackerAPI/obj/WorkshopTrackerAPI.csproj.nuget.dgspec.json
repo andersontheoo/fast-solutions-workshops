@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ander\\Downloads\\Projeto\\workshoptrackerapi\\WorkshopTrackerAPI.csproj": {}
+    "C:\\Users\\ander\\Downloads\\Projeto\\WorkshopTrackerAPI\\WorkshopTrackerAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ander\\Downloads\\Projeto\\workshoptrackerapi\\WorkshopTrackerAPI.csproj": {
+    "C:\\Users\\ander\\Downloads\\Projeto\\WorkshopTrackerAPI\\WorkshopTrackerAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ander\\Downloads\\Projeto\\workshoptrackerapi\\WorkshopTrackerAPI.csproj",
+        "projectUniqueName": "C:\\Users\\ander\\Downloads\\Projeto\\WorkshopTrackerAPI\\WorkshopTrackerAPI.csproj",
         "projectName": "WorkshopTrackerAPI",
-        "projectPath": "C:\\Users\\ander\\Downloads\\Projeto\\workshoptrackerapi\\WorkshopTrackerAPI.csproj",
+        "projectPath": "C:\\Users\\ander\\Downloads\\Projeto\\WorkshopTrackerAPI\\WorkshopTrackerAPI.csproj",
         "packagesPath": "C:\\Users\\ander\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ander\\Downloads\\Projeto\\workshoptrackerapi\\obj\\",
+        "outputPath": "C:\\Users\\ander\\Downloads\\Projeto\\WorkshopTrackerAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ander\\AppData\\Roaming\\NuGet\\NuGet.Config"

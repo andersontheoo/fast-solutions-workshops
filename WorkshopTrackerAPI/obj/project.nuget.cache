@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IXugJVcn/MQ=",
+  "dgSpecHash": "gUNHt79hdf4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ander\\Downloads\\Projeto\\workshoptrackerapi\\WorkshopTrackerAPI.csproj",
+  "projectFilePath": "C:\\Users\\ander\\Downloads\\Projeto\\WorkshopTrackerAPI\\WorkshopTrackerAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ander\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\ander\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\10.0.5\\microsoft.aspnetcore.authentication.jwtbearer.10.0.5.nupkg.sha512",

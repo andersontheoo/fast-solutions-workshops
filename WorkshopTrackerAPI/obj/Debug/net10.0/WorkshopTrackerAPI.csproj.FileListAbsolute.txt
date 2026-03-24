@@ -130,3 +130,4 @@ C:\Users\ander\Downloads\Projeto\workshoptrackerapi\obj\Debug\net10.0\refint\Wor
 C:\Users\ander\Downloads\Projeto\workshoptrackerapi\obj\Debug\net10.0\WorkshopTrackerAPI.pdb
 C:\Users\ander\Downloads\Projeto\workshoptrackerapi\obj\Debug\net10.0\WorkshopTrackerAPI.genruntimeconfig.cache
 C:\Users\ander\Downloads\Projeto\workshoptrackerapi\obj\Debug\net10.0\ref\WorkshopTrackerAPI.dll
+C:\Users\ander\Downloads\Projeto\WorkshopTrackerAPI\obj\Debug\net10.0\WorkshopTrackerAPI.sourcelink.json

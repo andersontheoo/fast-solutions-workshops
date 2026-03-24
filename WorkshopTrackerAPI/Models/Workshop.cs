@@ -7,6 +7,6 @@ namespace SeuProjeto.Models
         public DateTime DataRealizacao { get; set; }
         public string Descricao { get; set; }
 
-        public List<WorkshopColaborador> WorkshopColaboradores { get; set; } = new();
+        public ICollection<WorkshopColaborador> WorkshopColaboradores { get; set; }
     }
 }
