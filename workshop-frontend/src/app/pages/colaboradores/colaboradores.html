@@ -1,0 +1,14 @@
+<h2>Colaboradores</h2>
+
+<div *ngFor="let c of colaboradores">
+  <h3>{{ c.nome }}</h3>
+
+  <p><b>Workshops:</b></p>
+  <ul>
+    <li *ngFor="let w of c.workshops">
+      {{ w.nome }}
+    </li>
+  </ul>
+
+  <hr>
+</div>
