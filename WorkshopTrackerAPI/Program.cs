@@ -5,17 +5,13 @@ using SeuProjeto.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. Configuração do banco (In Memory)
 builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseInMemoryDatabase("WorkshopDb"));
 
-// 2. Configuração de Autorização e Autenticação (Adicionado)
-// ⚠️ IMPORTANTE: Configure o JWT corretamente ou remova se não for usar
-// Por enquanto, vou comentar a autenticação para facilitar os testes
-// builder.Services.AddAuthentication("Bearer").AddJwtBearer();
-// builder.Services.AddAuthorization();
+builder.Services.AddAuthentication("Bearer").AddJwtBearer();
+builder.Services.AddAuthorization();
 
-// 3. Controllers + evitar loop JSON
+
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
@@ -26,7 +22,7 @@ builder.Services.AddControllers()
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// 4. CORS - Configuração para aceitar o frontend Angular
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngularApp",
@@ -36,10 +32,9 @@ builder.Services.AddCors(options =>
             policy.WithOrigins("http://localhost:4200")
                   .AllowAnyMethod()
                   .AllowAnyHeader()
-                  .AllowCredentials(); // Se usar autenticação
+                  .AllowCredentials(); 
         });
     
-    // Opcional: política para desenvolvimento (permite tudo)
     options.AddPolicy("AllowAll",
         policy =>
         {
@@ -51,34 +46,33 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// 🔥 IMPORTANTE: Ordem correta dos middlewares
-// 1. CORS primeiro
-app.UseCors("AllowAngularApp"); // Use a política específica
 
-// 2. Arquivos estáticos (se tiver)
+app.UseCors("AllowAngularApp"); 
+
+
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-// 3. HTTPS (se estiver em produção)
+
 app.UseHttpsRedirection();
 
-// 4. Autenticação e Autorização (comentado por enquanto)
+
 app.UseAuthentication();
 app.UseAuthorization();
 
-// 5. Swagger
+
 app.UseSwagger();
 app.UseSwaggerUI();
 
-// 6. Mapeamento dos Controllers
+
 app.MapControllers();
 
-// 🔥 OPCIONAL: Adicionar dados iniciais para teste
+
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     
-    // Adicionar alguns colaboradores de exemplo se não existirem
+    
     if (!dbContext.Colaboradores.Any())
     {
         dbContext.Colaboradores.AddRange(
@@ -89,7 +83,7 @@ using (var scope = app.Services.CreateScope())
         await dbContext.SaveChangesAsync();
     }
     
-    // Adicionar alguns workshops de exemplo se não existirem
+    
     if (!dbContext.Workshops.Any())
     {
         var workshop1 = new Workshop 

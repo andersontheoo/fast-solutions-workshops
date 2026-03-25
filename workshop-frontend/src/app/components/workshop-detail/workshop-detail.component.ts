@@ -9,7 +9,7 @@ import { Colaborador } from '../../models/colaborador.model';
   selector: 'app-workshop-detail',
   templateUrl: './workshop-detail.component.html',
   styleUrls: ['./workshop-detail.component.css'],
-  standalone: false
+
 })
 export class WorkshopDetailComponent implements OnInit {
   workshop: WorkshopResponseDTO | null = null;

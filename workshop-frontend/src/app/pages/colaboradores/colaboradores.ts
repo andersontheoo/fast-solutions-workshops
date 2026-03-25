@@ -7,7 +7,7 @@ import { Colaborador } from '../../models/colaborador.model';
   selector: 'app-colaboradores',
   templateUrl: './colaboradores.html',
   styleUrls: ['./colaboradores.css'],
-  standalone: false
+  
 })
 export class ColaboradoresComponent implements OnInit {
   colaboradores: Colaborador[] = [];

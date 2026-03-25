@@ -1,8 +1,4 @@
-/*public class ColaboradorDTO
-{
-    public string Nome { get; set; }
-}
-*/
+
 namespace SeuProjeto.DTOs
 {
     public class ColaboradorInfoDTO

@@ -17,7 +17,7 @@ namespace SeuProjeto.Controllers
             _context = context;
         }
 
-        // ✅ GET - Listar todos
+        //  GET - Listar todos
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -29,7 +29,7 @@ namespace SeuProjeto.Controllers
             return Ok(colaboradores);
         }
 
-        // ✅ GET por ID
+        // GET por ID
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -44,7 +44,7 @@ namespace SeuProjeto.Controllers
             return Ok(colab);
         }
 
-        // ✅ POST - Criar
+        //  POST - Criar
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] ColaboradorDTO dto)
         {
@@ -59,7 +59,7 @@ namespace SeuProjeto.Controllers
             return Ok(colab);
         }
 
-        // ✅ PUT - Atualizar
+        //  PUT - Atualizar
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] ColaboradorDTO dto)
         {
@@ -75,7 +75,7 @@ namespace SeuProjeto.Controllers
             return Ok(colab);
         }
 
-        // ✅ DELETE - Remover
+        //  DELETE - Remover
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

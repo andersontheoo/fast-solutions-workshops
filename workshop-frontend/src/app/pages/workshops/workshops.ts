@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common'; // 👈 IMPORTANTE: Adicionar isso
+import { CommonModule } from '@angular/common'; 
 import { WorkshopService } from '../../services/workshop.service';
 import { WorkshopResponseDTO } from '../../models/workshop.model';
 
@@ -7,7 +7,7 @@ import { WorkshopResponseDTO } from '../../models/workshop.model';
   selector: 'app-workshops',
   templateUrl: './workshops.html',
   styleUrls: ['./workshops.css'],
-  standalone: false // Mantenha isso se estiver usando NgModule
+
 })
 export class WorkshopsComponent implements OnInit {
   workshops: WorkshopResponseDTO[] = [];

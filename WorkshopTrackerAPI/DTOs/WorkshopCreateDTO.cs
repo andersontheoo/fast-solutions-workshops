@@ -1,9 +1,8 @@
-// DTOs/WorkshopCreateDTO.cs
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace SeuProjeto.DTOs  // 👈 VERIFIQUE SE ESTE NAMESPACE ESTÁ CORRETO
+namespace SeuProjeto.DTOs  
 {
     public class WorkshopCreateDTO
     {

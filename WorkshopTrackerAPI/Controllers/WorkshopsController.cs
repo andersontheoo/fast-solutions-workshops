@@ -20,7 +20,7 @@
             _context = context;
         }
 
-        // ✅ GET - Listar todos
+        //  GET - Listar todos
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -32,7 +32,7 @@
             return Ok(workshops);
         }
 
-        // ✅ GET por ID
+        //  GET por ID
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -47,7 +47,7 @@
             return Ok(workshop);
         }
 
-        // ✅ POST - Criar
+        //  POST - Criar
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] WorkshopDTO dto)
         {
@@ -82,7 +82,7 @@
     return Ok(workshop);
 }
 
-        // ✅ PUT - Atualizar
+        //  PUT - Atualizar
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] WorkshopDTO dto)
         {
@@ -118,7 +118,7 @@
             return Ok(workshop);
         }
 
-        // ✅ DELETE - Remover
+        //  DELETE - Remover
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
