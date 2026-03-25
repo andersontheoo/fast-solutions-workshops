@@ -1,0 +1,54 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Workshops</h2>
+    <button class="btn btn-primary" routerLink="/workshop/novo">
+      + Novo Workshop
+    </button>
+  </div>
+
+  <!-- Mensagem de erro -->
+  <div *ngIf="error" class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{ error }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="error = ''"></button>
+  </div>
+
+  <!-- Loading -->
+  <div *ngIf="loading" class="text-center">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Carregando...</span>
+    </div>
+  </div>
+
+  <!-- Lista de Workshops -->
+  <div *ngIf="!loading" class="row">
+    <div *ngFor="let workshop of workshops" class="col-md-6 col-lg-4 mb-4">
+      <div class="card h-100 workshop-card" (click)="viewWorkshopDetails(workshop.id)">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-start">
+            <h5 class="card-title text-primary">{{ workshop.nome }}</h5>
+            <button class="btn btn-sm btn-danger" (click)="deleteWorkshop(workshop.id, $event)">
+              <i class="bi bi-trash"></i>
+            </button>
+          </div>
+          <p class="card-text text-muted small">{{ workshop.descricao | slice:0:100 }}...</p>
+          <div class="mt-2">
+            <span class="badge bg-info me-2">
+              <i class="bi bi-calendar"></i> {{ workshop.dataRealizacao | date:'dd/MM/yyyy HH:mm' }}
+            </span>
+            <span class="badge bg-secondary">
+              <i class="bi bi-people"></i> {{ workshop.colaboradores?.length || 0 }} participantes
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mensagem quando não há workshops -->
+    <div *ngIf="workshops.length === 0" class="col-12 text-center text-muted">
+      <p>Nenhum workshop cadastrado ainda.</p>
+      <button class="btn btn-outline-primary" routerLink="/workshop/novo">
+        Criar primeiro workshop
+      </button>
+    </div>
+  </div>
+</div>

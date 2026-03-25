@@ -1,19 +1,37 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../services/api';
+import { CommonModule } from '@angular/common';
+import { ColaboradorService } from '../../services/colaborador.service';
+import { Colaborador } from '../../models/colaborador.model';
 
 @Component({
   selector: 'app-colaboradores',
-  templateUrl: './colaboradores.html'
+  templateUrl: './colaboradores.html',
+  styleUrls: ['./colaboradores.css'],
+  standalone: false
 })
 export class ColaboradoresComponent implements OnInit {
+  colaboradores: Colaborador[] = [];
+  loading = false;
+  error = '';
 
-  colaboradores: any[] = [];
+  constructor(private colaboradorService: ColaboradorService) { }
 
-  constructor(private api: ApiService) {}
+  ngOnInit(): void {
+    this.loadColaboradores();
+  }
 
-  ngOnInit() {
-    this.api.getColaboradores().subscribe((data: any) => {
-      this.colaboradores = data;
+  loadColaboradores(): void {
+    this.loading = true;
+    this.colaboradorService.getColaboradores().subscribe({
+      next: (data) => {
+        this.colaboradores = data;
+        this.loading = false;
+      },
+      error: (err) => {
+        this.error = 'Erro ao carregar colaboradores: ' + err.message;
+        this.loading = false;
+        console.error(err);
+      }
     });
   }
 }

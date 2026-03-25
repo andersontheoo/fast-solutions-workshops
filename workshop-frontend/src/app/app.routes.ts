@@ -1,9 +1,12 @@
 import { Routes } from '@angular/router';
-import { WorkshopsComponent } from './pages/workshops/workshops';
-import { ColaboradoresComponent } from './pages/colaboradores/colaboradores';
+import { WorkshopListComponent } from './components/workshop-list/workshop-list.component';
+import { WorkshopDetailComponent } from './components/workshop-detail/workshop-detail.component';
+import { ColaboradorListComponent } from './components/colaborador-list/colaborador-list.component';
 
 export const routes: Routes = [
-  { path: 'workshops', component: WorkshopsComponent },
-  { path: 'colaboradores', component: ColaboradoresComponent },
-  { path: '', redirectTo: 'workshops', pathMatch: 'full' }
+  { path: '', redirectTo: '/workshops', pathMatch: 'full' },
+  { path: 'workshops', component: WorkshopListComponent },
+  { path: 'workshop/:id', component: WorkshopDetailComponent },
+  { path: 'workshop/novo', component: WorkshopDetailComponent },
+  { path: 'colaboradores', component: ColaboradorListComponent }
 ];
